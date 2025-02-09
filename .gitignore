@@ -1,0 +1,9 @@
+/.idea
+/*.http
+/*ide*helper*.*
+/node_modules
+/dist
+
+.vscode
+.env
+.DS_Store
