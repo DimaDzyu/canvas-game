@@ -1,5 +1,10 @@
 import { Game } from "./game";
 
-console.log(3);
+window.onload = () => {
+    const newGame = new Game();
+    newGame.run();
+};
+
+console.log("Ready");
 
 
