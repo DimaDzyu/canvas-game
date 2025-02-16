@@ -1,5 +1,6 @@
 import {Scene} from "./scene";
 import {SpriteSheet} from "../sprite-sheet";
+import {CharacterSheet} from "../character-sheet";
 
 export class GameLevel extends Scene {
     constructor(game) {
@@ -12,14 +13,11 @@ export class GameLevel extends Scene {
 
         // this.stone = this.tiles.getSprite(9);
         // this.stone.setXY(10, 10);
-        this.orcTiles = new SpriteSheet({
-            imageName: 'orc',
-            imageWidth: 1664,
-            imageHeight: 4992
-        });
+        this.orcTiles = new CharacterSheet({imageName: 'orc'});
 
-        this.orc = this.orcTiles.getAnimation([1,2,3,4,5,6,7], 300);
-        this.orc.setXY(1, 3);
+        this.orc = this.orcTiles.getAnimation('walk_right');
+       // this.orc = this.orcTiles.getAnimation([25,25,25], 300);
+        this.orc.setXY(10, 340);
     }
 
     init() {
