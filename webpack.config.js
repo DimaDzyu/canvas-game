@@ -1,4 +1,5 @@
 const path = require('path');
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
     mode: "development",
@@ -7,6 +8,13 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'js/game-compress.js',
     },
+    plugins: [
+        new CopyPlugin({
+            patterns: [
+                { from: "public" },
+            ],
+        }),
+    ],
     devServer: {
         static: './dist',
     },

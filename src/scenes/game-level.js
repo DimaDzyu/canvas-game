@@ -20,12 +20,12 @@ export class GameLevel extends Scene {
 
         this.orc = this.orcTiles.getAnimation([1,2,3,4,5,6,7], 300);
         this.orc.setXY(1, 3);
-
-
     }
 
     init() {
         super.init();
+        const mapData = require('../maps/level1.json');
+        this.map = this.game.screen.createMap('level1', mapData, this.tiles)
     }
     update(time) {
         this.orc.update(time);
@@ -34,6 +34,7 @@ export class GameLevel extends Scene {
     render(time) {
         this.update(time);
         this.game.screen.fill('#000000');
+        this.game.screen.drawSprite(this.map);
         //this.game.screen.drawSprite(this.stone);
         this.game.screen.drawSprite(this.orc);
         super.render(time);
